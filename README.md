@@ -1,0 +1,3 @@
+# LockBox
+
+LockBox is a password manager built in C that allows users to securely store and retrieve their passwords. The program uses encryption techniques to protect the passwords and ensure that they cannot be read by anyone except the user. Users can add, retrieve, and remove password entries, as well as change their master password. LockBox is a simple yet powerful tool for anyone looking to manage their passwords more effectively.
