@@ -1,6 +1,6 @@
 # LockBox
 
-LockBox is a password manager built in C that allows users to store and retrieve their passwords to a txt file, *for now*. Users can add, retrieve, and remove password entries.
+A password manager built in C that allows users to store and retrieve their passwords to a txt file, *for now*. Users can add, retrieve, and remove password entries.
 
 ### To-Do
 
