@@ -9,10 +9,10 @@ struct Login logins[MAX_LOGINS];
 // Save the logins to a file
 void saveLoginsToFile()
 {
-  FILE *f = fopen("logins.txt", "w");
+  FILE *f = fopen("./src/logins.txt", "w");
   if (f == NULL)
   {
-    printf("Error opening file\n");
+    printf("Error opening file1\n");
     return;
   }
 
@@ -28,10 +28,10 @@ void saveLoginsToFile()
 // Load the logins from a file
 void loadLoginsFromFile()
 {
-  FILE *f = fopen("logins.txt", "r");
+  FILE *f = fopen("./src/logins.txt", "r");
   if (f == NULL)
   {
-    printf("Error opening file\n");
+    printf("Error opening file2\n");
     return;
   }
 
@@ -69,7 +69,7 @@ void addLogin()
 
   saveLoginsToFile();
 
-  printf("Login added successfully\n");
+  printf("Login added successfully 🤙\n");
 }
 
 // View saved logins
@@ -77,7 +77,7 @@ void viewLogins()
 {
   if (numLogins == 0)
   {
-    printf("No logins saved\n");
+    printf("No logins saved 👎\n");
     return;
   }
 
@@ -93,7 +93,7 @@ void updateLogin()
 {
   if (numLogins == 0)
   {
-    printf("No logins saved\n");
+    printf("No logins saved 👎\n");
     return;
   }
 
@@ -106,10 +106,10 @@ void updateLogin()
   {
     if (strcmp(logins[i].website, website) == 0)
     {
-      printf("Enter new username (or press Enter to keep the same): ");
+      printf("Enter new username: ");
       scanf("%s", logins[i].username);
 
-      printf("Enter new password (or press Enter to keep the same): ");
+      printf("Enter new password: ");
       scanf("%s", logins[i].password);
 
       found = 1;
@@ -119,12 +119,12 @@ void updateLogin()
 
   if (!found)
   {
-    printf("Login not found\n");
+    printf("Login not found 👎\n");
   }
   else
   {
     saveLoginsToFile();
-    printf("Login updated successfully\n");
+    printf("Login updated successfully 🤙\n");
   }
 }
 
@@ -133,7 +133,7 @@ void deleteLogin()
 {
   if (numLogins == 0)
   {
-    printf("No logins saved\n");
+    printf("No logins saved 👎\n");
     return;
   }
 
@@ -159,11 +159,11 @@ void deleteLogin()
 
   if (!found)
   {
-    printf("Login not found\n");
+    printf("Login not found 👎\n");
   }
   else
   {
     saveLoginsToFile();
-    printf("Login deleted successfully\n");
+    printf("Login deleted successfully 🤙\n");
   }
 }

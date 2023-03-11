@@ -5,7 +5,6 @@
 // Display the main menu
 int main()
 {
-  loadLoginsFromFile();
   char password[50];
   printf("Enter master password: ");
   scanf("%s", password);
@@ -15,7 +14,6 @@ int main()
     printf("Invalid password\n");
     return 0;
   }
-
   int choice;
   do
   {
@@ -27,7 +25,8 @@ int main()
     printf("5. Exit\n");
     printf("Enter your choice: ");
     scanf("%d", &choice);
-    
+    printf("\n");
+
     switch (choice)
     {
     case 1:
@@ -43,7 +42,7 @@ int main()
       deleteLogin();
       break;
     case 5:
-      printf("Goodbye\n");
+      printf("Sionara👋\n");
       break;
     default:
       printf("Invalid choice\n");
