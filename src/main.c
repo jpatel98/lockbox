@@ -42,7 +42,7 @@ int main()
       deleteLogin();
       break;
     case 5:
-      printf("Sionara👋\n");
+      printf("Sayonara 👋\n");
       break;
     default:
       printf("Invalid choice\n");
