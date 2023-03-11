@@ -12,7 +12,7 @@ void saveLoginsToFile()
   FILE *f = fopen("./src/logins.txt", "w");
   if (f == NULL)
   {
-    printf("Error opening file1\n");
+    printf("Error opening file\n");
     return;
   }
 
@@ -31,7 +31,7 @@ void loadLoginsFromFile()
   FILE *f = fopen("./src/logins.txt", "r");
   if (f == NULL)
   {
-    printf("Error opening file2\n");
+    printf("Error opening file\n");
     return;
   }
 
