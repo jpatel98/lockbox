@@ -16,91 +16,81 @@ A password manager built in C that allows users to store and retrieve their pass
 Enter master password: mypassword
 
 Menu:
-
-    Add a new login
-    View saved logins
-    Update an existing login
-    Delete a saved login
-    Exit
-    Enter your choice: 1
+1. Add a new login
+2. View saved logins
+3. Update an existing login
+4. Delete a saved login
+5. Exit
+Enter your choice: 1
 
 Enter website name: example.com
 Enter username: alice
-Enter password: secret
-
+Enter password: secret@3534
 Login added successfully 🤙
 
 Menu:
-
-    Add a new login
-    View saved logins
-    Update an existing login
-    Delete a saved login
-    Exit
-    Enter your choice: 2
+1. Add a new login
+2. View saved logins
+3. Update an existing login
+4. Delete a saved login
+5. Exit
+Enter your choice: 2
 
 Saved logins:
 example.com - alice
 
 Menu:
-
-    Add a new login
-    View saved logins
-    Update an existing login
-    Delete a saved login
-    Exit
-    Enter your choice: 3
+1. Add a new login
+2. View saved logins
+3. Update an existing login
+4. Delete a saved login
+5. Exit
+Enter your choice: 3
 
 Enter website name: example.com
-Enter new username (or press Enter to keep the same): alice@example.com
-Enter new password (or press Enter to keep the same): newpassword
-
+Enter new username: alice@example.com
+Enter new password: YOLO@#$3212
 Login updated successfully 🤙
 
 Menu:
-
-    Add a new login
-    View saved logins
-    Update an existing login
-    Delete a saved login
-    Exit
-    Enter your choice: 2
+1. Add a new login
+2. View saved logins
+3. Update an existing login
+4. Delete a saved login
+5. Exit
+Enter your choice: 2
 
 Saved logins:
 example.com - alice@example.com
 
 Menu:
-
-    Add a new login
-    View saved logins
-    Update an existing login
-    Delete a saved login
-    Exit
-    Enter your choice: 4
+1. Add a new login
+2. View saved logins
+3. Update an existing login
+4. Delete a saved login
+5. Exit
+Enter your choice: 4
 
 Enter website name: example.com
-
 Login deleted successfully 🤙
 
 Menu:
-
-    Add a new login
-    View saved logins
-    Update an existing login
-    Delete a saved login
-    Exit
-    Enter your choice: 2
+1. Add a new login
+2. View saved logins
+3. Update an existing login
+4. Delete a saved login
+5. Exit
+Enter your choice: 2
 
 No logins saved 👎
 
 Menu:
-
-    Add a new login
-    View saved logins
-    Update an existing login
-    Delete a saved login
-    Exit
-    Enter your choice: 5
+1. Add a new login
+2. View saved logins
+3. Update an existing login
+4. Delete a saved login
+5. Exit
+Enter your choice: 5
 
 Sayonara 👋
 ```
