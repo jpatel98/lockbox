@@ -10,7 +10,7 @@ A password manager built in C that allows users to store and retrieve their pass
 - Implement pointers and linked list.
 - Figure out a way to deploy / release the console app.
 
-### Working
+### How it works
 
 ```
 Enter master password: mypassword
