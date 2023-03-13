@@ -6,6 +6,7 @@ A password manager built in C that allows users to store and retrieve their pass
 
 - ~~Divide the code into header files, logic and main.~~
 - Get rid of the logins.txt file because it's a security shit show.
+- Allow user to edit master password.
 - Implement some stronger encryption.
 - Implement pointers and linked list.
 - Figure out a way to deploy / release the console app.
