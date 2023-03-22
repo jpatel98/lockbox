@@ -27,6 +27,7 @@ int main()
     scanf("%d", &choice);
     printf("\n");
 
+    // Calling the functions using switch case
     switch (choice)
     {
     case 1:
