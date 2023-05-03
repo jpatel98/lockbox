@@ -2,9 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <openssl/sha.h>
 
-int numLogins = 0;
-struct Login logins[MAX_LOGINS];
+
+void hash_password(char* password, unsigned char* hash)
+{
+    SHA256((unsigned char*)password, strlen(password), hash);
+}
 
 // Save the logins to a file
 void saveLoginsToFile()
@@ -84,7 +88,7 @@ void viewLogins()
   printf("Saved logins:\n");
   for (int i = 0; i < numLogins; i++)
   {
-    printf("%s - %s\n", logins[i].website, logins[i].username);
+    printf("%s - %s - %s\n", logins[i].website, logins[i].username, logins[i].password);
   }
 }
 

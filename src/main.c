@@ -5,15 +5,48 @@
 // Display the main menu
 int main()
 {
-  char password[50];
-  printf("Enter master password: ");
-  scanf("%s", password);
+    unsigned char stored_hash[SHA256_DIGEST_LENGTH];
+    char entered_password[MAX_PASSWORD_LENGTH];
 
-  if (strcmp(password, "mypassword") != 0)
-  {
-    printf("Invalid password\n");
-    return 0;
-  }
+    // read stored hash from file or prompt the user to set it
+    FILE* fp = fopen("./src/hash.txt", "rb");
+    fread(stored_hash, 1, SHA256_DIGEST_LENGTH, fp);
+    if (fp == NULL || fread(stored_hash, 1, SHA256_DIGEST_LENGTH, fp) != SHA256_DIGEST_LENGTH)
+    {
+        printf("No master password set. Please set the master password:\n");
+        printf("Master password: ");
+        scanf("%s", entered_password);
+
+        unsigned char entered_hash[SHA256_DIGEST_LENGTH];
+        hash_password(entered_password, entered_hash);
+
+        fp = fopen("hash.txt", "wb");
+        fwrite(entered_hash, 1, SHA256_DIGEST_LENGTH, fp);
+        fclose(fp);
+
+        printf("Master password set successfully.\n");
+    }
+    fclose(fp);
+
+    // prompt user to enter master password
+    printf("Enter master password: ");
+    scanf("%s", entered_password);
+
+    // hash entered password and compare with stored hash
+    unsigned char entered_hash[SHA256_DIGEST_LENGTH];
+    hash_password(entered_password, entered_hash);
+
+    if (memcmp(stored_hash, entered_hash, SHA256_DIGEST_LENGTH) != 0)
+    {
+        printf("Invalid password\n");
+    }
+
+    // password is valid, continue with the program
+    printf("Password is valid\n");
+    // ...
+}
+
+
   int choice;
   do
   {

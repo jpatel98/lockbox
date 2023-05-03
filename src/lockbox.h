@@ -1,6 +1,7 @@
 // defines the data structure and functions for the lockbox program
 #ifndef LOCKBOX_H
 #define LOCKBOX_H
+#define _CRT_SECURE_NO_WARNINGS
 
 // constants
 #define MAX_LOGINS 100
@@ -24,6 +25,6 @@ void addLogin();
 void viewLogins();
 void updateLogin();
 void deleteLogin();
-void hashPassword(const char *password, char *hash);
+void hash_password(char* password, unsigned char* hash);
 
 #endif
