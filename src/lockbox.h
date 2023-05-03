@@ -16,8 +16,8 @@ struct Login {
 };
 
 // function prototypes
-extern int numLogins;
-extern struct Login logins[MAX_LOGINS];
+int numLogins;
+struct Login logins[MAX_LOGINS];
 void saveLoginsToFile();
 void loadLoginsFromFile();
 void addLogin();
