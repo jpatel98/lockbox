@@ -1,30 +1,27 @@
-// defines the data structure and functions for the lockbox program
 #ifndef LOCKBOX_H
 #define LOCKBOX_H
-#define _CRT_SECURE_NO_WARNINGS
 
-// constants
+#define MAX_PASSWORD_LENGTH 100
+#define MAX_WEBSITE_LENGTH 100
 #define MAX_LOGINS 100
-#define MAX_WEBSITE_LENGTH 50
-#define MAX_USERNAME_LENGTH 50
-#define MAX_PASSWORD_LENGTH 50
+#define MAX_HASH_LENGTH 2000
 
-// data structure
 struct Login {
     char website[MAX_WEBSITE_LENGTH];
-    char username[MAX_USERNAME_LENGTH];
+    char username[MAX_PASSWORD_LENGTH];
     char password[MAX_PASSWORD_LENGTH];
 };
 
-// function prototypes
-int numLogins;
 struct Login logins[MAX_LOGINS];
+int numLogins;
+
+void hash_password(char* password, unsigned char* hash);
 void saveLoginsToFile();
 void loadLoginsFromFile();
 void addLogin();
 void viewLogins();
 void updateLogin();
 void deleteLogin();
-void hash_password(char* password, unsigned char* hash);
+int verifyMasterPassword(char* password, unsigned char* hash);
 
-#endif
+#endif /* LOCKBOX_H */

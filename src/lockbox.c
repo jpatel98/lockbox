@@ -1,13 +1,25 @@
-#include "lockbox.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <openssl/sha.h>
-
+#include "lockbox.h"
 
 void hash_password(char* password, unsigned char* hash)
 {
-    SHA256((unsigned char*)password, strlen(password), hash);
+    // Simple hashing algorithm
+    unsigned int hashValue = 0;
+    int i = 0;
+    while (password[i] != '\0')
+    {
+        hashValue += password[i];
+        hashValue = (hashValue << 3) | (hashValue >> (32 - 3)); // Rotate left by 3 bits
+        i++;
+    }
+
+    // Convert the hash value to a byte array
+    for (i = 0; i < sizeof(unsigned int); i++)
+    {
+        hash[i] = (hashValue >> (i * 8)) & 0xFF;
+    }   
 }
 
 // Save the logins to a file
@@ -49,8 +61,7 @@ void loadLoginsFromFile()
 }
 
 // Add a new login
-void addLogin()
-{
+void addLogin() {
   if (numLogins >= MAX_LOGINS)
   {
     printf("Error: maximum number of logins exceeded\n");
@@ -77,8 +88,7 @@ void addLogin()
 }
 
 // View saved logins
-void viewLogins()
-{
+void viewLogins() {
   if (numLogins == 0)
   {
     printf("No logins saved 👎\n");
@@ -93,8 +103,7 @@ void viewLogins()
 }
 
 // Update an existing login
-void updateLogin()
-{
+void updateLogin() {
   if (numLogins == 0)
   {
     printf("No logins saved 👎\n");
@@ -170,4 +179,21 @@ void deleteLogin()
     saveLoginsToFile();
     printf("Login deleted successfully 🤙\n");
   }
+}
+
+// Verify the master password
+int verifyMasterPassword(char* password, unsigned char* hash)
+{
+    unsigned char passwordHash[MAX_HASH_LENGTH];
+    hash_password(password, passwordHash);
+
+    for (int i = 0; password[i] != '\0'; i++)
+    {
+        if (passwordHash[i] != hash[i])
+        {
+            return 0;
+        }
+    }
+
+    return 1;
 }
